@@ -132,12 +132,12 @@ bool HeartbeatPayload::parseFrom(void* bufferedInputConnectionContext) {
 bool HeartbeatPayload::composeTo(void* bufferedOutputConnectionContext) const {
 	if (bufferedOutputConnectionContext == nullptr) return false;
 
-	if (!dx_write_compact_int(bufferedOutputConnectionContext, static_cast<const dxf_int_t>(contentMask_))) {
+	if (!dx_write_compact_int(bufferedOutputConnectionContext, static_cast<dxf_int_t>(contentMask_))) {
 		return false;
 	}
 
 	if (hasTimeMillis()) {
-		if (!dx_write_compact_long(bufferedOutputConnectionContext, static_cast<const dxf_long_t>(timeMillis_))) {
+		if (!dx_write_compact_long(bufferedOutputConnectionContext, static_cast<dxf_long_t>(timeMillis_))) {
 			return false;
 		}
 	}
