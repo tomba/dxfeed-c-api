@@ -1,6 +1,7 @@
 QT -= core gui
+
 TEMPLATE = lib
-CONFIG += c++17 staticlib
+CONFIG += c++20 staticlib
 CONFIG += create_prl
 
 INCLUDEPATH += include
