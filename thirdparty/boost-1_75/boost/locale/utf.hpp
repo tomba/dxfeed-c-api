@@ -222,6 +222,7 @@ namespace utf {
                 if (!is_trail(tmp))
                     return illegal;
                 c = (c << 6) | ( tmp & 0x3F);
+                [[fallthrough]];
             case 2:
                 if(BOOST_LOCALE_UNLIKELY(p==e))
                     return incomplete;
@@ -229,6 +230,7 @@ namespace utf {
                 if (!is_trail(tmp))
                     return illegal;
                 c = (c << 6) | ( tmp & 0x3F);
+                [[fallthrough]];
             case 1:
                 if(BOOST_LOCALE_UNLIKELY(p==e))
                     return incomplete;
